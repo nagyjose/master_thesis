@@ -55,7 +55,42 @@ flowchart LR
 
 ---
 
-## 3. Technické parametry desky přípravku
+## 3. Hardware, schéma zapojení a PCB vizualizace
+
+### Hlavní schéma a 3D model přípravku
+
+![Schéma zapojení testovacího přípravku](docs/images/jig_schematic.png)
+
+*Obr. 1: Elektrické schéma zapojení propojující piny centrálního konektoru IDC 2×22 (J1) na 41 odpružených testovacích kontaktů.*
+
+📄 [Otevřít schéma zapojení v plném rozlišení (PDF)](DP-jigs-schematic.pdf)
+
+![3D render osazeného testovacího přípravku](docs/images/jig_3d_render.png)
+
+*Obr. 2: 3D pohled na sestavu testovacího přípravku s konektorem J1 a pogo kontakty.*
+
+📄 [Otevřít montážní výkres layoutu v plném rozlišení (PDF)](DP-jigs-layout.pdf)
+
+<details>
+<summary>🔍 Zobrazit vrstvy layoutu PCB a montážní výkresy</summary>
+
+#### Horní strana PCB (Top Copper – rozmístění pájecích bodů pogo pinů)
+![Horní strana PCB](docs/images/jig_pcb_layout_top.png)
+
+#### Spodní strana PCB (Bottom Copper – signálové cesty ke konektoru J1)
+![Spodní strana PCB](docs/images/jig_pcb_layout_bottom.png)
+
+#### Vrtací plán plošných spojů (Drill Map)
+![Vrtací plán](docs/images/jig_pcb_drill_map.png)
+
+#### Mechanický obrys přípravku a montážní otvory (Edge.Cuts)
+![Mechanický obrys přípravku](docs/images/jig_pcb_edge_cuts.png)
+
+</details>
+
+---
+
+## 4. Technické parametry desky přípravku
 
 | Parametr | Specifikace |
 | :--- | :--- |
@@ -68,18 +103,20 @@ flowchart LR
 
 ---
 
-## 4. Struktura adresáře
+## 5. Struktura adresáře
 
 ```text
 .
 ├── DP-jigs.kicad_pcb                 # Návrh 2vrstvé desky testovacího přípravku v KiCad 9
 ├── DP-jigs.kicad_pro                 # Projektová konfigurace KiCad
 ├── DP-jigs.kicad_sch                 # Elektrické schéma zapojení (propojení J1 na pogo piny)
+├── DP-jigs-schematic.pdf             # Vektorové schéma v PDF v plném rozlišení
 ├── DP-jigs-layout.pdf                # Celkový osazovací a montážní výkres přípravku
 ├── DP-jigs-layout-part-1..4.pdf      # Detailní výkresy jednotlivých sekcí a kvadrantů
 ├── DP-jigs-view-1.png                # 3D fotorealistický render desky přípravku
+├── docs/images/                      # Optimalizované PNG náhledy pro dokumentaci
 ├── fabrication-toolkit-options.json  # Exportní nastavení pro KiCad Fabrication Toolkit
-├── production/                       # Výrobní podklady pro JLCPCB
+├── production/ (fab-data/)           # Výrobní podklady pro JLCPCB
 │   ├── DP-jigs.zip                   # Archiv s Gerber vrstvami a Excellon vrty
 │   ├── bom.csv                       # Kusovník součástek (J1 IDC lišta + pogo piny)
 │   ├── positions.csv                 # Souřadnice pro strojní osazení konektoru a pinů
@@ -90,7 +127,7 @@ flowchart LR
 
 ---
 
-## 5. Mapování signálů a konektoru J1
+## 6. Mapování signálů a konektoru J1
 
 Schéma `DP-jigs.kicad_sch` definuje přímé vedení z pinů dvouřadého konektoru `J1` na jednotlivé odpružené hroty. Rozložení je rozděleno do funkčních bloků:
 
@@ -107,7 +144,7 @@ Schéma `DP-jigs.kicad_sch` definuje přímé vedení z pinů dvouřadého konek
 
 ---
 
-## 6. Doporučený postup oživování (Bring-up Workflow)
+## 7. Doporučený postup oživování (Bring-up Workflow)
 
 1. **Vizuální kontrola:** Před usazením testované desky do přípravku zkontrolujte, zda žádný z pogo hrotů není ohnutý nebo mechanicky zablokovaný.
 2. **Připojení laboratorního zdroje:** Zdroj nastavte na 3.7 V (VBAT) nebo 5.0 V (VBUS) s proudovým omezením na max. 100 mA pro detekci případného zkratu na desce.
@@ -118,7 +155,7 @@ Schéma `DP-jigs.kicad_sch` definuje přímé vedení z pinů dvouřadého konek
 
 ---
 
-## 7. Návaznost na ostatní projekty
+## 8. Návaznost na ostatní projekty
 
 Projekt `DP-jigs` je v rámci repozitáře **DP** (`nagyjose/DP` / `nagyjose/master_thesis`) začleněn do složky testovacích prostředků `testing/`:
 - **PRJ-10 (DP-Kontrola):** Primární testovaná jednotka základny.

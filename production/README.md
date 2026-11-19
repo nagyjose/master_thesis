@@ -61,7 +61,49 @@ flowchart TD
 
 ---
 
-## 3. Technické parametry a skladba vrstev
+## 3. Výrobní vizualizace, layout a vrstvy PCB
+
+### Hlavní výrobní náhledy panelu
+
+![3D render osazeného výrobního panelu shora](docs/images/panel_3d_render_top.png)
+
+*Obr. 1: 3D render hotového výrobního panelu sdružujícího desky Kontrola (vlevo) a Závodník (vpravo).*
+
+![Výrobní layout vrstvy Top Copper](docs/images/panel_pcb_layer_1_top_cu.png)
+
+*Obr. 2: Výrobní výkres horní signálové vrstvy (Top Copper F.Cu) s technologickými okraji a fiducial značkami.*
+
+📄 [Otevřít kompletní 7stránkový výkres vrstev v plném rozlišení (PDF)](DP-Panel-layout.pdf)
+
+<details>
+<summary>🔍 Zobrazit zbývající vrstvy layoutu a 3D pohledy (In1, In2, Bottom Cu, potisky, vrtací plán)</summary>
+
+#### Vnitřní napájecí vrstva (In1.Cu – Power / Ground plane)
+![Vnitřní napájecí vrstva In1.Cu](docs/images/panel_pcb_layer_2_in1_cu.png)
+
+#### Vnitřní signálová vrstva (In2.Cu – Internal Signals)
+![Vnitřní signálová vrstva In2.Cu](docs/images/panel_pcb_layer_3_in2_cu.png)
+
+#### Spodní signálová vrstva (B.Cu – Bottom Copper s testovacími body)
+![Spodní signálová vrstva B.Cu](docs/images/panel_pcb_layer_4_bottom_cu.png)
+
+#### Horní nepájivá maska a potisk (F.SilkS & F.Mask)
+![Horní maska a potisk](docs/images/panel_pcb_layer_5_top_silk.png)
+
+#### Spodní nepájivá maska a potisk (B.SilkS & B.Mask)
+![Spodní maska a potisk](docs/images/panel_pcb_layer_6_bottom_silk.png)
+
+#### Vrtací plán a obrysy desek (Edge.Cuts & Drill map)
+![Vrtací plán a obrysy](docs/images/panel_pcb_layer_7_drill_map.png)
+
+#### 3D render spodní strany panelu (testovací plošky a fiducials)
+![3D render spodní strany panelu](docs/images/panel_3d_render_bottom.png)
+
+</details>
+
+---
+
+## 4. Technické parametry a skladba vrstev
 
 Panel je navržen pro standardní 4vrstvý proces výrobce JLCPCB (stackup JLC04161H-7628):
 
@@ -84,7 +126,7 @@ Panel je navržen pro standardní 4vrstvý proces výrobce JLCPCB (stackup JLC04
 
 ---
 
-## 4. Struktura adresáře
+## 5. Struktura adresáře
 
 ```text
 .
@@ -95,8 +137,9 @@ Panel je navržen pro standardní 4vrstvý proces výrobce JLCPCB (stackup JLC04
 ├── DP-Panel-layout.pdf               # Kompletní výrobní výkres panelu
 ├── DP-Panel-layout-1..7.pdf          # Výkresy jednotlivých vrstev (Cu, masky, potisk, vrtání)
 ├── DP-Panel-view-1..4.png            # 3D fotorealistické rendery osazeného i holého panelu
+├── docs/images/                      # Optimalizované PNG náhledy pro dokumentaci
 ├── fabrication-toolkit-options.json  # Konfigurace pluginu KiCad Fabrication Toolkit
-├── production/                       # Finální balík podkladů pro výrobce
+├── production/ (fab-data/)           # Finální balík podkladů pro výrobce
 │   ├── DP-Fab-Data.zip               # Archiv s Gerber vrstvami a vrtacími soubory
 │   ├── DP-Fab-Data_bom.csv           # Kompletní kusovník pro JLCPCB SMT osazení s LCSC ID
 │   ├── DP-Fab-Data_positions.csv     # Pick & Place souřadnice součástek (Centroid / CPL)
@@ -107,7 +150,7 @@ Panel je navržen pro standardní 4vrstvý proces výrobce JLCPCB (stackup JLC04
 
 ---
 
-## 5. Podklady pro osazení (BOM & CPL)
+## 6. Podklady pro osazení (BOM & CPL)
 
 Výrobní data v adresáři `production/` byla generována pomocí nástroje *KiCad Fabrication Toolkit*. Všechny součástky mají v kusovníku `DP-Fab-Data_bom.csv` přiřazené unikátní objednací kódy distributora LCSC.
 
@@ -124,7 +167,7 @@ Výrobní data v adresáři `production/` byla generována pomocí nástroje *Ki
 
 ---
 
-## 6. Návaznost na ostatní projekty diplomové práce
+## 7. Návaznost na ostatní projekty diplomové práce
 
 Projekt `DP-Panel` je nedílnou součástí celého ekosystému diplomové práce a v rámci monorepa **DP** (`nagyjose/DP` / `nagyjose/master_thesis`) tvoří složku výrobních dat `production/`:
 - **PRJ-10 (DP-Kontrola):** Zdrojový návrh desky kontrolního stanoviště.
@@ -134,7 +177,7 @@ Projekt `DP-Panel` je nedílnou součástí celého ekosystému diplomové prác
 
 ---
 
-## 7. Stav projektu a poznámky k výrobě
+## 8. Stav projektu a poznámky k výrobě
 
 - **Ověření výrobních dat:** Všechny Gerber vrstvy byly zkontrolovány vůči IPC-D-356 netlistu a výrobním pravidlům JLCPCB (DRC bez chyb).
 - **Lomové můstky:** Po osazení a přetavení v peci je doporučeno panel dělit pomocí kleští na vylamování můstků nebo přesným odfrézováním, aby nedošlo k mechanickému namáhání keramických SMD kondenzátorů v blízkosti okrajů desek.
