@@ -1,15 +1,19 @@
+# ==============================================================================
+# Monorepo Gitignore - Diplomová práce (Hardware + Firmware + Výroba + Mechanika)
+# ==============================================================================
+
 # =========================
 # STM32CubeIDE / ARM GCC
 # =========================
-# Ignorujeme složky s buildem - ty se dají vždy znovu vygenerovat z kódu
+# Složky s buildem
 BLE_Mac_Static/
 Debug/
 Release/
 
-# Ignorujeme automaticky generovaný soubor s verzí
+# Automaticky generovaný soubor s verzí
 Core/Src/version.c
 
-# Ignorujeme objekty a dočasné soubory překladače
+# Objekty a mezivýstupy překladače
 *.o
 *.su
 *.d
@@ -19,29 +23,32 @@ Core/Src/version.c
 *.map
 *.log
 
-# Ignorujeme lokální nastavení Eclipse workspace (cesty oken atd.)
+# Lokální nastavení Eclipse / STM32CubeIDE workspace
 .metadata/
+*.launch
+.loadpath
+.project.bak
 
 # =========================
-# KiCad (Verze 6, 7, 8, 9)
+# KiCad EDA (v7, v8, v9)
 # =========================
-# Ignorujeme zálohy a automatické ukládání
-*.bak
-*-bak
+# Zálohy a automatické ukládání
 *-backups/
 backups/
+*.bak
+*-bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
 _autosave-*
 *.tmp
 *.lck
+~*
 
-# Ignorujeme lokální uživatelská nastavení
+# Lokální uživatelská nastavení
 *.kicad_prl
 
-# Ignorujeme cache footprintů
+# Cache knihoven a footprintů
 fp-info-cache
-
-# Soubory synchronizačních konfliktů
-*(conflicted copy*
 
 # =========================
 # FreeCAD
@@ -53,8 +60,10 @@ fp-info-cache
 *~
 
 # =========================
-# Operační systém
+# Operační systém & synchronizace
 # =========================
+*(conflicted copy*
+ilovepdf_rotated/
 Thumbs.db
+[Dd]esktop.ini
 .DS_Store
-desktop.ini

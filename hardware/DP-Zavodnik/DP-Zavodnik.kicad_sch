@@ -1,0 +1,149 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "ce50ef5d-74cb-4201-9775-27695b715ae3")
+	(paper "A4")
+	(title_block
+		(title "Diplomová práce - Závodník")
+		(date "2026-01-11")
+		(rev "1.0-1/26")
+		(comment 1 "Instituce: Fakulta elektrotechnická ČVUT")
+		(comment 2 "Modul: Závodník")
+		(comment 3 "Projekt: Diplomová práce")
+		(comment 4 "Autor: Josef Nagy")
+	)
+	(lib_symbols)
+	(sheet
+		(at 33.02 29.21)
+		(size 73.66 82.55)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "803442bf-4323-45f3-895a-397a9e19e96f")
+		(property "Sheetname" "power supply"
+			(at 33.02 28.4984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "wireless-charger.kicad_sch"
+			(at 33.02 112.3446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Zavodnik"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 198.12 27.94)
+		(size 73.66 82.55)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e85e1605-461e-41a6-ba23-ec0b8b26d416")
+		(property "Sheetname" "MCU"
+			(at 198.12 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU.kicad_sch"
+			(at 198.12 111.0746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Zavodnik"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 27.94)
+		(size 73.66 82.55)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "eda78377-7614-40a1-a9e9-526f147e2e3f")
+		(property "Sheetname" "BMS and signaling"
+			(at 115.57 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "signaling.kicad_sch"
+			(at 115.57 111.0746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Zavodnik"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

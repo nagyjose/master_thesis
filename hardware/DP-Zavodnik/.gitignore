@@ -1,0 +1,27 @@
+# ==============================================================================
+# KiCad Gitignore - DP-Zavodnik
+# ==============================================================================
+
+# Zálohy a automaticky ukládané soubory
+*-backups/
+*.bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+_autosave-*
+*.lck
+~*
+
+# Lokální uživatelské nastavení a cache (není potřeba verzovat)
+*.kicad_prl
+fp-info-cache
+
+# Kolizní kopie z cloudových synchronizací (ownCloud / Nextcloud)
+*(conflicted copy*
+
+# Dočasné pomocné složky pro manipulaci s PDF
+ilovepdf_rotated/
+
+# Systémové soubory OS
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store

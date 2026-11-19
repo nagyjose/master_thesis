@@ -1,0 +1,191 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "ce50ef5d-74cb-4201-9775-27695b715ae3")
+	(paper "A4")
+	(title_block
+		(title "Diplomová práce - Kontrola")
+		(date "2026-01-11")
+		(rev "1.0-1/26")
+		(comment 1 "Instituce: Fakulta elektrotechnická ČVUT")
+		(comment 2 "Modul: Kontrola")
+		(comment 3 "Projekt: Diplomová práce")
+		(comment 4 "Autor: Josef Nagy")
+	)
+	(lib_symbols)
+	(sheet
+		(at 153.67 20.32)
+		(size 88.9 63.5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "14a0152e-8455-48bb-a749-4371d12c818a")
+		(property "Sheetname" "NB-IoT-module"
+			(at 153.67 19.6084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "NB-IoT-module.kicad_sch"
+			(at 153.67 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Kontrola"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 57.15 91.44)
+		(size 88.9 63.5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8a2b127c-5a2a-45e1-be47-2b9ae1ed440c")
+		(property "Sheetname" "wireless-charger-and-BMS"
+			(at 57.15 90.7284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "wireless-charger.kicad_sch"
+			(at 57.15 155.5246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Kontrola"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 57.15 20.32)
+		(size 88.9 63.5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e85e1605-461e-41a6-ba23-ec0b8b26d416")
+		(property "Sheetname" "MCU"
+			(at 57.15 19.6084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU.kicad_sch"
+			(at 57.15 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Kontrola"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 153.67 91.44)
+		(size 88.9 63.5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "eda78377-7614-40a1-a9e9-526f147e2e3f")
+		(property "Sheetname" "signaling-and-BMS"
+			(at 153.67 90.7284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "signaling.kicad_sch"
+			(at 153.67 155.5246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Kontrola"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,100 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "b2d0cda9-3742-4453-bebe-13722ab8ba78")
+	(paper "A4")
+	(title_block
+		(title "Diplomová práce - Závodník")
+		(date "2026-04-11")
+		(rev "1.0-4/26")
+		(comment 2 "Modul: Závodník")
+		(comment 3 "Projekt: Diplomová práce")
+		(comment 4 "Autor: Josef Nagy")
+	)
+	(lib_symbols)
+	(sheet
+		(at 33.02 30.48)
+		(size 57.15 48.26)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "2bfbd862-1d0b-4b15-89b6-8e4c7a02ea74")
+		(property "Sheetname" "wireless-charger"
+			(at 33.02 29.7684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "wireless-charger.kicad_sch"
+			(at 33.02 79.3246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Zavodnik"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3/af9052ae-aee5-4bfc-8c3f-67843137fb31"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 143.51 52.07)
+		(size 57.15 53.34)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f1d08212-3e04-47f5-959e-e49defa780ad")
+		(property "Sheetname" "regulator"
+			(at 143.51 51.3584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "regulator.kicad_sch"
+			(at 143.51 105.9946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DP-Zavodnik"
+				(path "/ce50ef5d-74cb-4201-9775-27695b715ae3/af9052ae-aee5-4bfc-8c3f-67843137fb31"
+					(page "11")
+				)
+			)
+		)
+	)
+)

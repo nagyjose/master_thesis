@@ -1,0 +1,21 @@
+# ==============================================================================
+# KiCad Gitignore - DP-Kontrola
+# ==============================================================================
+
+# Zálohy a automaticky ukládané soubory
+*-backups/
+*.bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+_autosave-*
+*.lck
+~*
+
+# Lokální uživatelské nastavení a cache (není potřeba verzovat)
+*.kicad_prl
+fp-info-cache
+
+# Systémové soubory OS
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
