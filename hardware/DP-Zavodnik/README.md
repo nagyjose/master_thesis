@@ -14,7 +14,7 @@ Hlavní funkce zařízení:
 - **Bezkontaktní ražení kontrol (Air Punching):** Automatická detekce kontrolního stanoviště [DP-Kontrola](../DP-Kontrola) při průběhu v rádiovém dosahu pomocí standardu IEEE 802.15.4 bez nutnosti fyzického zasouvání čipu do otvoru.
 - **Okamžitá odezva (Feedback):** Výkonný akustický bzučák buzený signálem 4 kHz a vysoce svítivé LED diody dávají závodníkovi v plném běhu okamžité a zřetelné potvrzení úspěšného zaznamenání kontrolního bodu.
 - **Nenulová paměť závodu:** Ukládání identifikačních kódů kontrol a přesných časů oražení do interní paměti mikrokontroléru pro následné vyčtení v cílovém prostoru.
-- **Ergonomická nositelná konstrukce:** Zaoblený tvar desky přizpůsobený tělu závodníka a integraci do kompaktního pouzdra [DP-Enclosure](../DP-Enclosure).
+- **Ergonomická nositelná konstrukce:** Zaoblený tvar desky přizpůsobený tělu závodníka a integraci do kompaktního pouzdra [DP-Enclosure](../../mechanics).
 - **Hermetické provedení a Qi nabíjení:** Zařízení nemá vnější kontakty podléhající oxidaci a znečištění blátem či potem; nabíjení vestavěného Li-Po článku probíhá bezdrátově přes standard Qi.
 
 ---
@@ -48,10 +48,61 @@ flowchart TD
 
 ---
 
-## 3. Struktura projektu
+## 3. Hardware, schéma a PCB
+
+### 3.1 3D vizualizace osobní jednotky
+![3D render osazené desky DP-Zavodnik](docs/images/pcb_3d_render.png)
+
+### 3.2 Schéma zapojení
+![Blokové schéma zapojení – list 1](docs/images/schematic_p1.png)
+
+<details>
+<summary>🔍 Zobrazit detailní listy schématu zapojení (strany 2–4)</summary>
+
+#### List 2: Mikrokontrolér STM32WB55CGUx, oscilátory a RF výstup
+![Schéma zapojení – MCU](docs/images/schematic_p2.png)
+
+#### List 3: Qi bezdrátové nabíjení (BQ51013B) a Power-Path správa baterie (BQ24232)
+![Schéma zapojení – Napájení a nabíjení](docs/images/schematic_p3.png)
+
+#### List 4: Budicí obvod 4 kHz piezo bzučáku, stavové LED a monitorování akumulátoru
+![Schéma zapojení – Bzučák, signalizace a BMS](docs/images/schematic_p4.png)
+
+</details>
+
+📄 [Otevřít kompletní schéma v plném rozlišení (vektorové PDF)](DP-Zavodnik-Schema.pdf)
+
+### 3.3 Návrh a layout plošného spoje (PCB Layout)
+![Předloha plošného spoje DP-Zavodnik](docs/images/pcb_layout.png)
+
+<details>
+<summary>🔍 Zobrazit výkresy jednotlivých vrstev a technologických masek</summary>
+
+| Vrstva / Náhled | Soubor |
+| :--- | :--- |
+| **Top strana (F.Cu + Silk + Mask)** | ![Top strana](docs/images/pcb_layout-2.png) |
+| **Vnitřní vrstva In1 (GND / Power)** | ![In1 Cu](docs/images/pcb_layout-3.png) |
+| **Vnitřní vrstva In2 (Signály)** | ![In2 Cu](docs/images/pcb_layout-4.png) |
+| **Bottom strana (B.Cu)** | ![Bottom strana](docs/images/pcb_layout-5.png) |
+| **Pájecí maska a potisk** | ![Maska a potisk](docs/images/pcb_layout-6.png) |
+| **Vrtací plán (Drill drawing)** | ![Vrtací plán](docs/images/pcb_layout-7.png) |
+| **Kompletní montážní výkres** | ![Montážní výkres](docs/images/pcb_layout-8.png) |
+
+</details>
+
+📄 [Otevřít kompletní výrobní výkres vrstev v plném rozlišení (vektorové PDF)](DP-Zavodnik-Layout.pdf)
+
+---
+
+## 4. Struktura projektu
 
 ```text
 DP-Zavodnik/
+├── docs/
+│   └── images/                 # Exportované grafické náhledy schémat, vrstev layoutu a 3D rendery
+│       ├── pcb_3d_render.png   # 3D fotorealistický render osazené jednotky
+│       ├── pcb_layout*.png     # Náhledy vrstev a masek plošného spoje
+│       └── schematic_p*.png    # Náhledy všech 4 listů schématu
 ├── DP-Zavodnik.kicad_pro       # Hlavní projektový soubor KiCad
 ├── DP-Zavodnik.kicad_sch       # Kořenové schéma (Sheet 1)
 ├── MCU.kicad_sch               # Schéma zapojení mikrokontroléru STM32WB55CGUx (Sheet 2)
@@ -69,7 +120,7 @@ DP-Zavodnik/
 
 ---
 
-## 4. Technické parametry hardwaru
+## 5. Technické parametry hardwaru
 
 | Parametr | Hodnota / Specifikace |
 | :--- | :--- |
@@ -87,7 +138,7 @@ DP-Zavodnik/
 
 ---
 
-## 5. Požadavky a otevření projektu
+## 6. Požadavky a otevření projektu
 
 - **KiCad EDA:** Doporučena verze **8.0** nebo novější (projekt vytvořen a verifikován v KiCad 8/9).
 - Pro otevření projektu spusťte `DP-Zavodnik.kicad_pro` v KiCadu.
@@ -96,16 +147,16 @@ DP-Zavodnik/
 
 ---
 
-## 6. Vazby na další projekty
+## 7. Vazby na další projekty
 
 - **[DP-Kontrola](../DP-Kontrola) (PRJ-10):** Základnová stacionární stanice, která zaznamenává průchod této jednotky.
 - **[DP Monorepo](https://github.com/nagyjose/DP):** Centrální repozitář obsahující firmware `Zavodnik_Syst` a `Kontrola_Syst`.
-- **[DP-Panel](../DP-Panel) (PRJ-12):** Společná panelizace s deskou Kontrola pro hromadné osazování.
-- **[DP-jigs](../DP-jigs) (PRJ-13):** Testovací a flashovací přípravek pro nahrání firmwaru na výrobní lince.
-- **[DP-Enclosure](../DP-Enclosure) (PRJ-15):** 3D model pouzdra navržený ve FreeCADu.
+- **[DP-Panel](../../production) (PRJ-12):** Společná panelizace s deskou Kontrola pro hromadné osazování.
+- **[DP-jigs](../../testing) (PRJ-13):** Testovací a flashovací přípravek pro nahrání firmwaru na výrobní lince.
+- **[DP-Enclosure](../../mechanics) (PRJ-15):** 3D model pouzdra navržený ve FreeCADu.
 
 ---
 
-## 7. Stav projektu a historie
+## 8. Stav projektu a historie
 
 - **Verze 1.0 (Diplomová práce - Finální):** Kompletně navržený hardware, vyrobené prototypové desky, ověřena funkčnost bezdrátového nabíjení, 4 kHz bzučáku i oboustranné rádiové komunikace 802.15.4 s jednotkou Kontrola.

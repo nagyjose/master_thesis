@@ -51,10 +51,49 @@ flowchart TD
 
 ---
 
-## 3. Struktura projektu
+## 3. Hardware, schéma a PCB
+
+### 3.1 3D vizualizace a osazení desky
+![3D render osazené desky DP-Kontrola](docs/images/pcb_3d_render.png)
+
+### 3.2 Schéma zapojení
+![Blokové schéma subsystémů – list 1](docs/images/schematic_p1.png)
+
+<details>
+<summary>🔍 Zobrazit detailní listy schématu zapojení (strany 2–5)</summary>
+
+#### List 2: Mikrokontrolér STM32WB55, krystaly HSE/LSE a USB
+![Schéma zapojení – MCU](docs/images/schematic_p2.png)
+
+#### List 3: Celulární modem Quectel BC660K-GL a SIM slot
+![Schéma zapojení – NB-IoT modul](docs/images/schematic_p3.png)
+
+#### List 4: Bezdrátové Qi nabíjení (BQ51013B) a nabíječ baterie (BQ24232)
+![Schéma zapojení – Bezdrátové nabíjení a Power-Path](docs/images/schematic_p4.png)
+
+#### List 5: Signalizace (RGB LED, bzučák) a monitorování napětí baterie
+![Schéma zapojení – Signalizace a BMS](docs/images/schematic_p5.png)
+
+</details>
+
+📄 [Otevřít kompletní schéma v plném rozlišení (vektorové PDF)](DP-Kontrola-Schema.pdf)
+
+### 3.3 Návrh plošného spoje (PCB Layout)
+![Předloha plošného spoje DP-Kontrola](docs/images/pcb_layout.png)
+
+📄 [Otevřít výrobní dokumentaci DPS v plném rozlišení (vektorové PDF)](DP-Kontrola.pdf)
+
+---
+
+## 4. Struktura projektu
 
 ```text
 DP-Kontrola/
+├── docs/
+│   └── images/                 # Exportované grafické náhledy schémat, layoutu a 3D rendery
+│       ├── pcb_3d_render.png   # 3D fotorealistický render osazené desky
+│       ├── pcb_layout.png      # Náhled vrstev plošného spoje
+│       └── schematic_p*.png    # Náhledy všech 5 listů schématu
 ├── DP-Kontrola.kicad_pro       # Hlavní projektový soubor KiCad
 ├── DP-Kontrola.kicad_sch       # Kořenové schéma (Sheet 1)
 ├── MCU.kicad_sch               # Schéma MCU části, hodin a krystalů (Sheet 2)
@@ -75,11 +114,11 @@ DP-Kontrola/
 
 ---
 
-## 4. Technické parametry hardwaru
+## 5. Technické parametry hardwaru
 
 | Parametr | Hodnota / Specifikace |
 | :--- | :--- |
-| **Rozměry DPS** | Kompaktní tvar přizpůsobený skříňce [DP-Enclosure](../DP-Enclosure) |
+| **Rozměry DPS** | Kompaktní tvar přizpůsobený skříňce [DP-Enclosure](../../mechanics) |
 | **Počet vrstev** | 4 vrstvy (Top Signal, In1 Power/GND, In2 Signal, Bottom Signal) |
 | **Materiál a tloušťka** | FR4, 1.6 mm, povrchová úprava ENIG (zlacení) |
 | **Mikrokontrolér** | **STM32WB55RGVx** (VFQFPN68, dual-core Cortex-M4 + Cortex-M0+) |
@@ -93,7 +132,7 @@ DP-Kontrola/
 
 ---
 
-## 5. Požadavky a otevření projektu
+## 6. Požadavky a otevření projektu
 
 - **KiCad EDA:** Doporučena verze **8.0** nebo vyšší (projekt byl vytvořen a verifikován v KiCad 8/9).
 - Pro otevření projektu otevřete soubor `DP-Kontrola.kicad_pro` v prostředí KiCad.
@@ -102,19 +141,19 @@ DP-Kontrola/
 
 ---
 
-## 6. Vazby na další projekty
+## 7. Vazby na další projekty
 
 Projekt je pevnou součástí ekosystému diplomové práce:
 
 - **[DP-Zavodnik](../DP-Zavodnik) (PRJ-11):** Párová mobilní jednotka závodníka, se kterou kontrola komunikuje protokolem 802.15.4.
 - **[DP Monorepo](https://github.com/nagyjose/DP):** Centrální repozitář obsahující firmware obou jednotek (`Kontrola_Syst`, `Zavodnik_Syst`).
-- **[DP-Panel](../DP-Panel) (PRJ-12):** Panelizovaná výrobní předloha sdružující desky Kontrola a Závodník do jednoho výrobního přířezu.
-- **[DP-jigs](../DP-jigs) (PRJ-13):** Jehličkový programovací a testovací přípravek (pogo-pin bed-of-nails) pro oživování této desky.
-- **[DP-Enclosure](../DP-Enclosure) (PRJ-15):** 3D model vodotěsného plastového pouzdra navržený ve FreeCADu.
+- **[DP-Panel](../../production) (PRJ-12):** Panelizovaná výrobní předloha sdružující desky Kontrola a Závodník do jednoho výrobního přířezu.
+- **[DP-jigs](../../testing) (PRJ-13):** Jehličkový programovací a testovací přípravek (pogo-pin bed-of-nails) pro oživování této desky.
+- **[DP-Enclosure](../../mechanics) (PRJ-15):** 3D model vodotěsného plastového pouzdra navržený ve FreeCADu.
 
 ---
 
-## 7. Stav projektu a historie
+## 8. Stav projektu a historie
 
 - **Verze 1.0 (Bakalářský projekt):** Vývojový prototyp postavený na komerčních vývojových kitech Nucleo.
 - **Verze 2.0 (Diplomový projekt):** První integrovaná deska s STM32WB55 a základním RF přenosem.
