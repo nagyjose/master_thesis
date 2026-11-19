@@ -23,16 +23,29 @@ Core/Src/version.c
 .metadata/
 
 # =========================
-# KiCad (Verze 6, 7, 8)
+# KiCad (Verze 6, 7, 8, 9)
 # =========================
 # Ignorujeme zálohy a automatické ukládání
 *.bak
 *-bak
+*-backups/
+backups/
 _autosave-*
 *.tmp
+*.lck
 
 # Ignorujeme lokální uživatelská nastavení
 *.kicad_prl
 
 # Ignorujeme cache footprintů
 fp-info-cache
+
+# Soubory synchronizačních konfliktů
+*(conflicted copy*
+
+# =========================
+# Operační systém
+# =========================
+Thumbs.db
+.DS_Store
+desktop.ini
