@@ -2,7 +2,7 @@
 
 > Komplexní hardwarový a softwarový ekosystém pro měření mezičasů a bezdrátový přenos dat při orientačních a vytrvalostních závodech (orientační běh, MTBO, lyžařský orientační běh). Systém využívá časování a vzájemnou rádiovou komunikaci dle standardu **IEEE 802.15.4**, Bluetooth Low Energy (BLE) pro konfiguraci a servisní odečet, bezdrátové indukční nabíjení standardu Qi a vzdálený přenos mezičasů do závodního centra přes úzkopásmovou síť **NB-IoT** (Narrowband IoT).
 
-**Autor:** Ing. Josef Nagy  
+**Autor:** Josef Nagy  
 **Instituce:** České vysoké učení technické v Praze (Fakulta elektrotechnická)  
 **Stav projektu:** Dokončeno a ověřeno (HW Revize 2.1 / FW v1.24) | **Licence:** Open Source / Akademické využití
 
