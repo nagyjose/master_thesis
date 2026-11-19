@@ -170,6 +170,26 @@ Modul `mechanics/` obsahuje kompletní 3D mechanické řešení pouzder a krabi�
 
 Podrobné informace a kompletní fotogalerii viz [mechanics/README.md](file:///c:/Users/josef/Documents/KiCad-projects/DP/mechanics/README.md).
 
+### D. Výrobní panelizace a podklady pro osazení (production/)
+
+Sdružený 4vrstvý technologický panel spojující desky Kontrola a Závodník pro sériové osazování na SMT lince (JLCPCB):
+
+| 3D render výrobního panelu shora | Výrobní layout vrstvy Top Copper (F.Cu) |
+| :---: | :---: |
+| ![3D výrobní panel](production/docs/images/panel_3d_render_top.png) | ![Top Copper layout panelu](production/docs/images/panel_pcb_layer_1_top_cu.png) |
+
+Podrobné informace, vrstvy a kusovník viz [production/README.md](file:///c:/Users/josef/Documents/KiCad-projects/DP/production/README.md).
+
+### E. Programovací a testovací přípravek (testing/)
+
+Dvouvrstvý Bed-of-Nails tester s 41 pružinovými kontakty a rozhraním IDC 2×22 pro oživování, diagnostiku a programování obou desek:
+
+| Schéma zapojení testovacího přípravku | 3D render osazeného testeru Bed-of-Nails |
+| :---: | :---: |
+| ![Schéma přípravku](testing/docs/images/jig_schematic.png) | ![3D render testeru](testing/docs/images/jig_3d_render.png) |
+
+Podrobné informace, schéma a montážní výkres viz [testing/README.md](file:///c:/Users/josef/Documents/KiCad-projects/DP/testing/README.md).
+
 ---
 
 ## 7. Návaznost modulů v rámci diplomové práce
