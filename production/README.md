@@ -67,36 +67,49 @@ flowchart TD
 
 ![3D render osazeného výrobního panelu shora](docs/images/panel_3d_render_top.png)
 
-*Obr. 1: 3D render hotového výrobního panelu sdružujícího desky Kontrola (vlevo) a Závodník (vpravo).*
+*Obr. 1: 3D render hotového výrobního panelu sdružujícího desky Kontrola (vlevo nahoře) a Závodník (vlevo dole).*
 
-![Výrobní layout vrstvy Top Copper](docs/images/panel_pcb_layer_1_top_cu.png)
+![Výrobní 2D layout vrstvy Top Copper](docs/images/panel_pcb_f_cu.png)
 
-*Obr. 2: Výrobní výkres horní signálové vrstvy (Top Copper F.Cu) s technologickými okraji a fiducial značkami.*
+*Obr. 2: Návrh horní vrstvy mědi (Top Copper F.Cu) v editoru DPS včetně SMD součástek, frézovaných drážek, vylamovacích můstků (mouse bites) a technologických okrajů panelu.*
 
 📄 [Otevřít kompletní 7stránkový výkres vrstev v plném rozlišení (PDF)](DP-Panel-layout.pdf)
 
 <details>
-<summary>🔍 Zobrazit zbývající vrstvy layoutu a 3D pohledy (In1, In2, Bottom Cu, potisky, vrtací plán)</summary>
+<summary>🔍 Zobrazit podrobné výkresy jednotlivých vrstev PCB (In1 GND, In2 Power, B.Cu, pasty, potisky, osazovací plán) a spodní strany</summary>
 
-#### Vnitřní napájecí vrstva (In1.Cu – Power / Ground plane)
-![Vnitřní napájecí vrstva In1.Cu](docs/images/panel_pcb_layer_2_in1_cu.png)
+Jednotlivé listy exportované z výrobního výkresu `DP-Panel-layout.pdf`:
 
-#### Vnitřní signálová vrstva (In2.Cu – Internal Signals)
-![Vnitřní signálová vrstva In2.Cu](docs/images/panel_pcb_layer_3_in2_cu.png)
+#### List 1: Vnitřní zemní vrstva (In1.Cu – GND Plane)
+Souvislá zemní plocha (zelená) zajišťující nízkou impedanci zpětných proudů, integritu signálů a stínění pro vysokofrekvenční RF vedení i sběrnice.
+![Vnitřní zemní vrstva In1.Cu](docs/images/panel_pcb_in1_cu_gnd.png)
 
-#### Spodní signálová vrstva (B.Cu – Bottom Copper s testovacími body)
-![Spodní signálová vrstva B.Cu](docs/images/panel_pcb_layer_4_bottom_cu.png)
+#### List 2: Vnitřní napájecí vrstva (In2.Cu – Power Plane)
+Polygonové napájecí plochy (hnědá/oranžová) rozdělené na jednotlivé napěťové domény systému (+3.3V, +4V pro GSM/NB-IoT modem, +5VD digitální a +5VP výkonové napájení).
+![Vnitřní napájecí vrstva In2.Cu](docs/images/panel_pcb_in2_cu_pwr.png)
 
-#### Horní nepájivá maska a potisk (F.SilkS & F.Mask)
-![Horní maska a potisk](docs/images/panel_pcb_layer_5_top_silk.png)
+#### List 3: Spodní vrstva mědi (B.Cu – Bottom Copper)
+Signálové trasy na spodní straně (modrá), stínicí plochy a testovací plošky (Test Points TP1–TP30 pro desku Kontrola a TP81–TP90 pro desku Závodník) pro jehličkový tester.
+![Spodní signálová vrstva B.Cu](docs/images/panel_pcb_b_cu.png)
 
-#### Spodní nepájivá maska a potisk (B.SilkS & B.Mask)
-![Spodní maska a potisk](docs/images/panel_pcb_layer_6_bottom_silk.png)
+#### List 4: Šablona pájecí pasty pro horní SMD osazení (F.Paste – Solder Paste Stencil)
+Otvorový plán šablony pro nanesení pájecí pasty na SMD plošky (včetně pouzder QFN-68 pro STM32WB55, LGA-58 pro Quectel BC660K a pasivů 0402).
+![Šablona pájecí pasty F.Paste](docs/images/panel_pcb_f_paste.png)
 
-#### Vrtací plán a obrysy desek (Edge.Cuts & Drill map)
-![Vrtací plán a obrysy](docs/images/panel_pcb_layer_7_drill_map.png)
+#### List 5: Horní technologický potisk (F.SilkS – Top Silkscreen)
+Popisky součástek, orientační značky konektorů, diod, označení revize 1.0 (2026) a oficiální logo ČVUT FEL.
+![Horní technologický potisk F.SilkS](docs/images/panel_pcb_f_silks.png)
 
-#### 3D render spodní strany panelu (testovací plošky a fiducials)
+#### List 6: Spodní technologický potisk (B.SilkS – Bottom Silkscreen)
+Zrcadlený spodní potisk s označením testovacích bodů TP1 až TP89 pro snadnou orientaci při diagnostice na testovacím přípravku.
+![Spodní technologický potisk B.SilkS](docs/images/panel_pcb_b_silks.png)
+
+#### List 7: Horní montážní a osazovací výkres (F.Fab – Front Assembly Drawing)
+Technologický výkres s fyzickými obrysy pouzder součástek, polaritou elektrolytických kondenzátorů a orientací integrovaných obvodů.
+![Horní osazovací výkres F.Fab](docs/images/panel_pcb_f_fab.png)
+
+#### 3D render spodní strany panelu
+Pohled na spodní stranu panelu s testovacími ploškami a konektory USB-C.
 ![3D render spodní strany panelu](docs/images/panel_3d_render_bottom.png)
 
 </details>
@@ -111,18 +124,21 @@ Panel je navržen pro standardní 4vrstvý proces výrobce JLCPCB (stackup JLC04
 | :--- | :--- |
 | **Vnější rozměry panelu** | 114.05 × 77.55 mm |
 | **Celková tloušťka desky** | 1.6062 mm |
-| **Počet vrstev** | 4 (Top Cu, In1 Power, In2 Signal, Bottom Cu) |
+| **Počet vrstev** | 4 (F.Cu, In1.Cu GND, In2.Cu Power, B.Cu) |
 | **Základní materiál** | FR4 Nan-Ya NP-155FR, dielektrikum 7628 (RC 49 %) |
-| **Tloušťka mědi** | 35 µm (1 oz) vnější i vnitřní vrstvy |
-| **Povrchová úprava** | HASL olovnatý / bezolovnatý (příp. ENIG pro RF aplikace) |
+| **Tloušťka mědi** | 35 µm (1 oz) vnější vrstvy (F.Cu, B.Cu), 15.2 µm (0.5 oz) vnitřní vrstvy (In1.Cu, In2.Cu) |
+| **Povrchová úprava** | HASL SnPb (příp. ENIG pro RF aplikace) |
 | **Nepájivá maska / potisk** | Zelená / bílá |
 | **Minimální šířka spoje / izolační mezera** | 0.15 mm / 0.20 mm |
 
 ### Skladba vrstev (Stackup)
-1. **F.Cu (Top):** Signálová vrstva, RF vedení s impedančním přizpůsobením 50 Ω, diskrétní SMD komponenty.
-2. **In1.Cu (Inner 1):** Spojitá napájecí a zemní plocha (GND/PWR plane).
-3. **In2.Cu (Inner 2):** Vnitřní signálová vrstva pro propojovací sběrnice a pomocné napájení.
-4. **B.Cu (Bottom):** Spodní signálová a stínící vrstva, testovací plošky (Test Points) pro testovací přípravek.
+1. **F.Cu (Top layer, 35 µm):** Horní signálová vrstva, RF vedení s impedančním přizpůsobením 50 Ω, diskrétní SMD komponenty.
+2. **Dielektrikum 1 (Prepreg 7628, 0.21 mm, $\varepsilon_r = 4.4$):** Izolační vrstva.
+3. **In1.Cu (Inner 1, 15.2 µm):** Spojitá celistvá zemní plocha (GND plane).
+4. **Dielektrikum 2 (Jádro Nan-Ya NP-155FR, 1.065 mm, $\varepsilon_r = 4.3$):** Nosné laminátové jádro.
+5. **In2.Cu (Inner 2, 15.2 µm):** Vnitřní napájecí vrstva (Power plane) s polygony +3.3V, +4V, +5VD, +5VP.
+6. **Dielektrikum 3 (Prepreg 7628, 0.21 mm, $\varepsilon_r = 4.4$):** Izolační vrstva.
+7. **B.Cu (Bottom layer, 35 µm):** Spodní signálová a stínící vrstva, testovací plošky (Test Points) pro testovací přípravek.
 
 ---
 

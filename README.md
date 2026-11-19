@@ -176,7 +176,7 @@ Sdružený 4vrstvý technologický panel spojující desky Kontrola a Závodník
 
 | 3D render výrobního panelu shora | Výrobní layout vrstvy Top Copper (F.Cu) |
 | :---: | :---: |
-| ![3D výrobní panel](production/docs/images/panel_3d_render_top.png) | ![Top Copper layout panelu](production/docs/images/panel_pcb_layer_1_top_cu.png) |
+| ![3D výrobní panel](production/docs/images/panel_3d_render_top.png) | ![Top Copper layout panelu](production/docs/images/panel_pcb_f_cu.png) |
 
 Podrobné informace, vrstvy a kusovník viz [production/README.md](file:///c:/Users/josef/Documents/KiCad-projects/DP/production/README.md).
 
