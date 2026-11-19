@@ -160,6 +160,16 @@ Firmware běží na dvoujádrovém mikrokontroléru řady STM32WB:
    - Přejděte na záložku *Firmware Upgrade* a nahrajte binárku `stm32wb5x_Ble_Mac_802_15_4_fw.bin` na vyhrazenou adresu bezdrátového subsystému.
 4. Zkompilujte projekt v konfiguraci `Release` nebo `Debug` a nahrajte jej do mikrokontroléru.
 
+### C. Mechanická pouzdra a 3D konstrukce (mechanics/)
+
+Modul `mechanics/` obsahuje kompletní 3D mechanické řešení pouzder a krabiček vyvinutých pro obě jednotky časoměrného systému:
+
+| Pouzdro kontrolní stanice Kontrola | Pouzdro osobní jednotky Závodník |
+| :---: | :---: |
+| ![Pouzdro Kontrola](mechanics/docs/images/kontrola_enclosure_iso.png) | ![Pouzdro Závodník](mechanics/docs/images/zavodnik_enclosure_iso.png) |
+
+Podrobné informace a kompletní fotogalerii viz [mechanics/README.md](file:///c:/Users/josef/Documents/KiCad-projects/DP/mechanics/README.md).
+
 ---
 
 ## 7. Návaznost modulů v rámci diplomové práce

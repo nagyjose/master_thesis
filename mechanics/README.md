@@ -58,13 +58,77 @@ flowchart TD
 
 ---
 
-## 3. Struktura projektu a přehled souborů
+## 3. Vizuální náhledy a 3D rendery pouzder
+
+### 3.1 Základnová stanice Kontrola
+
+Robustní outdoorové pouzdro navržené pro montáž na orientační stojan či strom v lesním terénu s důrazem na vodotěsnost a mechanickou odolnost.
+
+![Pouzdro Kontrola – Celkový pohled](docs/images/kontrola_enclosure_iso.png)
+*Obrázek 1: Celkový izometrický pohled na sestavené pouzdro kontrolní stanice Kontrola.*
+
+![Pouzdro Kontrola – Řez s osazenou deskou](docs/images/kontrola_enclosure_section.png)
+*Obrázek 2: Řez pouzdrem s vnitřním uspořádáním elektroniky, akumulátoru a těsnicí spáry.*
+
+<details>
+<summary>🔍 Zobrazit všech 7 detailních konstrukčních pohledů jednotky Kontrola</summary>
+
+| Pohled shora | Pohled z boku |
+| :---: | :---: |
+| ![Pohled shora](docs/images/kontrola_enclosure_top.png) | ![Pohled z boku](docs/images/kontrola_enclosure_side.png) |
+
+| Vnitřní šasi pro PCB a baterii | Lůžko bezdrátového Qi nabíjení |
+| :---: | :---: |
+| ![Vnitřní šasi](docs/images/kontrola_enclosure_internal.png) | ![Qi lůžko](docs/images/kontrola_enclosure_qi_pad.png) |
+
+| Obvodové prolisy těsnění | Distanční vodicí sloupky pro šrouby |
+| :---: | :---: |
+| ![Těsnění](docs/images/kontrola_enclosure_seal_groove.png) | ![Distanční sloupky](docs/images/kontrola_enclosure_standoffs.png) |
+
+#### Rentgenový náhled vnitřního uspořádání
+![Rentgenový model](docs/images/kontrola_enclosure_xray.png)
+*Obrázek 2a: Transparentní rentgenový pohled na rozmístění desky a periferních antén uvnitř pouzdra.*
+
+</details>
+
+---
+
+### 3.2 Osobní jednotka Závodník
+
+Kompaktní nositelné pouzdro optimalizované pro upevnění na zápěstí, prst nebo sportovní oděv s hladkými přechody eliminujícími zachycení v podrostu.
+
+![Pouzdro Závodník – Ergonomické zakřivení](docs/images/zavodnik_enclosure_iso.png)
+*Obrázek 3: Izometrický pohled na aerodynamické ergonomické pouzdro závodníka.*
+
+![Pouzdro Závodník – Čelní optická signalizace](docs/images/zavodnik_enclosure_front_led.png)
+*Obrázek 4: Čelní pohled s průzorem pro LED indikátor potvrzení záznamu kontroly.*
+
+<details>
+<summary>🔍 Zobrazit všechny doplňkové pohledy jednotky Závodník (4 další pohledy)</summary>
+
+| Spodní strana (průvlaky pro pásek) | Dělící spára a zámky skořepiny |
+| :---: | :---: |
+| ![Průvlaky pro pásek](docs/images/zavodnik_enclosure_strap_mount.png) | ![Zámky pouzdra](docs/images/zavodnik_enclosure_locks.png) |
+
+| Porovnání proporcí a uložení PCB | Vývojová revize v28 |
+| :---: | :---: |
+| ![Uložení desky](docs/images/zavodnik_enclosure_pcb_fit.png) | ![Revize v28](docs/images/zavodnik_enclosure_rev28.png) |
+
+</details>
+
+---
+
+## 4. Struktura projektu a přehled souborů
 
 ```text
 .
 ├── .gitignore                          # Ignorování záložních souborů FreeCADu (*.FCStd1) a OS balastu
 ├── README.md                           # Tato dokumentace
 ├── DP-Kontrola.FCStd                   # Hlavní parametrický 3D model krabičky Kontrola ve FreeCADu
+│
+├── docs/images/                        # Optimalizované vizuální náhledy pro dokumentaci
+│   ├── kontrola_enclosure_*.png        # Rendery pouzdra kontrolní stanice
+│   └── zavodnik_enclosure_*.png        # Rendery nositelného pouzdra závodníka
 │
 ├── Rendery jednotky Kontrola:
 │   ├── DP-Kontrola-Enclosure-view-1.png # Celkový izometrický pohled na sestavu
@@ -88,7 +152,7 @@ flowchart TD
 
 ---
 
-## 4. Doporučené parametry pro 3D tisk a výrobu
+## 5. Doporučené parametry pro 3D tisk a výrobu
 
 Pro výrobu funkčních prototypů metodou aditivní výroby (3D tisk) se doporučují následující parametry:
 
@@ -103,7 +167,7 @@ Pro výrobu funkčních prototypů metodou aditivní výroby (3D tisk) se doporu
 
 ---
 
-## 5. Práce s CAD modelem
+## 6. Práce s CAD modelem
 
 Model `DP-Kontrola.FCStd` je vytvořen v open-source CAD systému **FreeCAD** (doporučená verze 0.20+ nebo 1.0) s využitím standardního PartDesign workbench.
 
@@ -114,7 +178,7 @@ Model `DP-Kontrola.FCStd` je vytvořen v open-source CAD systému **FreeCAD** (d
 
 ---
 
-## 6. Vazby na ostatní části diplomové práce
+## 7. Vazby na ostatní části diplomové práce
 
 Projekt je nedílnou mechanickou součástí komplexního ekosystému diplomové práce:
 
@@ -125,7 +189,7 @@ Projekt je nedílnou mechanickou součástí komplexního ekosystému diplomové
 
 ---
 
-## 7. Stav projektu a další kroky
+## 8. Stav projektu a další kroky
 
 - [x] Dokončen parametrický 3D CAD model pouzdra stanice Kontrola (`DP-Kontrola.FCStd`).
 - [x] Vygenerována a zvalidována sada 15 renderů pro vizuální kontrolu proporcí a ergonomie.
