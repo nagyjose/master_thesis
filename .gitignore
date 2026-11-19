@@ -44,6 +44,15 @@ fp-info-cache
 *(conflicted copy*
 
 # =========================
+# FreeCAD
+# =========================
+*.FCStd1
+*.FCStd?
+*.FCBak
+*.fcbak
+*~
+
+# =========================
 # Operační systém
 # =========================
 Thumbs.db

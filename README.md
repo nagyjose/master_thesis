@@ -70,6 +70,10 @@ Monorepo sdružuje firmware, výrobní data plošných spojů a testovací pří
 │   ├── DP-jigs-layout*.pdf # Montážní a osazovací výkresy zkušebních jehel
 │   ├── fab-data/           # Výrobní data přípravku DP-jigs.zip, BOM a CPL
 │   └── README.md           # Podrobná dokumentace přípravku a postup oživování
+├── mechanics/              # [PRJ-15] 3D konstrukce krabiček a pouzder jednotek (DP-Enclosure)
+│   ├── DP-Kontrola.FCStd   # Parametrický 3D model krabičky Kontrola ve FreeCADu
+│   ├── *.png               # 15 fotorealistických renderů pohledů a řezů (Kontrola & Závodník)
+│   └── README.md           # Podrobná technická dokumentace mechaniky a doporučení pro 3D tisk
 ├── .gitignore              # Ochrana před commitem build artefaktů, záloh a mezipamětí
 └── README.md               # Tato hlavní přehledová dokumentace monorepa
 ```
@@ -98,7 +102,18 @@ Podrobné informace viz [testing/README.md](file:///c:/Users/josef/Documents/KiC
 
 ---
 
-## 6. Firmware modulů
+## 6. Mechanická pouzdra a 3D konstrukce (`mechanics/`)
+
+Modul `mechanics/` obsahuje kompletní mechanické řešení pouzder a krabiček vyvinutých pro obě jednotky časoměrného systému:
+- **Jednotka Kontrola:** Parametrický CAD model `DP-Kontrola.FCStd` ve FreeCADu s těsnicí obvodovou drážkou proti stříkající vodě a prachu (outdoorové použití v lese), vnitřním lůžkem pro Li-Ion akumulátor, cívku bezdrátového nabíjení a distančními sloupky pro 4vrstvou desku.
+- **Jednotka Závodník:** Kompaktní, ergonomické nositelné pouzdro na ruku či oděv se zaobleným profilem eliminujícím zachycení v podrostu a prolisy pro elastický popruh.
+- **Výrobní podklady:** Doporučené parametry pro FDM a SLA/SLS 3D tisk (PETG, ASA, ABS, Tough Resin), výšky vrstev, výplně a katalog 15 fotorealistických renderů.
+
+Podrobné informace viz [mechanics/README.md](file:///c:/Users/josef/Documents/KiCad-projects/DP/mechanics/README.md).
+
+---
+
+## 7. Firmware modulů
 
 Firmware pro obě jednotky je vyvíjen v prostředí **STM32CubeIDE** s využitím HAL knihoven a STM32WB bezdrátového koprocesorového subsystému (M0+ jádro obsluhující BLE a 802.15.4 stack, M4 aplikační jádro):
 - `Kontrola_Syst/`: Obsluhuje rádiový přijímač 802.15.4, RTC časování, komunikaci s NB-IoT modemem přes AT příkazy a ukládání logů do paměti.
@@ -106,12 +121,13 @@ Firmware pro obě jednotky je vyvíjen v prostředí **STM32CubeIDE** s využit�
 
 ---
 
-## 7. Návaznost na související moduly v rámci diplomové práce
+## 8. Návaznost na související moduly v rámci diplomové práce
 
 Ekosystém diplomové práce zahrnuje následující projektové části:
 - **PRJ-10 (DP-Kontrola):** Zdrojový návrh desky kontrolní stanice (KiCad).
 - **PRJ-11 (DP-Zavodnik):** Zdrojový návrh desky závodníka (KiCad).
 - **PRJ-12 (DP-Panel):** Integrováno ve složce `production/`.
 - **PRJ-13 (DP-jigs):** Integrováno ve složce `testing/`.
-- **PRJ-14 (DP-Frame):** Konstrukční a mechanické rámové desky.
-- **PRJ-15 (DP-Enclosure):** 3D modely krabiček ve FreeCADu pro obě jednotky.
+- **PRJ-14 (DP-Frame):** Vyřazeno / nepublikováno (prázdná šablona bez zapojení a DPS).
+- **PRJ-15 (DP-Enclosure):** Integrováno ve složce `mechanics/`.
+- **PRJ-16 (DP-Merge):** Vyřazeno / nepublikováno (prázdná schránka).
